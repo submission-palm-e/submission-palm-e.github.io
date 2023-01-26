@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>PaLM-E: An Embodied Multimodal Language Model</title>
+
+    <meta name="description" content="PaLM-E: An Embodied Multimodal Language Model">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+    <meta property="og:image" content="https://palm-e.github.io/img/rt1-teaser.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://palm-e.github.io/"/>
+    <meta property="og:title" content="PaLM-E: An Embodied Multimodal Language Model" />
+    <meta property="og:description" content="Project page for PaLM-E: An Embodied Multimodal Language Model." />
+
+        <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PaLM-E: An Embodied Multimodal Language Model" />
+    <meta name="twitter:description" content="Project page for PaLM-E: An Embodied Multimodal Language Model." />
+    <meta name="twitter:image" content="https://palm-e.github.io/img/rt1-teaser.jpeg" />
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52J0PM8XKV');
+</script>
+	
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <strong><font size="+6">PaLM-E: An Embodied Multimodal Language Model</font></strong> 
+                <!--<small>
+                    CoRL 2021
+                </small>-->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <br>
+                <li>under submission</li>
+                <br>
+		<br><br>
+		<!--
+                    <a href="http://g.co/robotics">
+                    <image src="img/rng-logo.png" height="37px"> </a>
+                    <a href="https://research.google/teams/brain/">   
+                    <image src="img/google-research-logo.png" height="25px"> </a> 
+                    -->
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+<!--
+                        <li>
+                            <a href="assets/rt1.pdf">
+                            <image src="img/paper_small2.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtu.be/UuKAp9a6wMs">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="https://github.com/google-research/robotics_transformer">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>                   
+                        </li> 
+-->
+                    </ul>
+                </div>
+        </div>
+
+
+   
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p style="text-align:center;">
+        	    	<video id="v0" width="100%" playsinline autoplay muted loop controls>
+                       <source src="videos/meta/planning.mp4" type="video/mp4">
+                   </video>
+                </p>
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+The main contribution of this paper is an exploration of embodied language models.
+We train an embodied reasoning agent which maps multimodal observations to text, through a large language model, with one model trained across multiple embodied tasks (planning, visual question answering, affordance detection) on multiple embodiments.  As our model inherits from the large language model PaLM, but makes it Embodied, we call it PaLM-E.  We demonstrate that a single large embodied multimodal PaLM-E model can address a variety of embodied reasoning tasks, from a variety of observation modalities, on multiple embodiments, and further, exhibits positive transfer: the model benefits from diverse joint training across internet-scale language, vision, and visual-language domains.  In addition to our focus of using PaLM-E as an embodied reasoner, we also describe various innovations that may be of interest in general multimodal learning: the use of neural scene representations as particularly effective input modalities, and text-labeling multimodal tokens for flexible multimodal-grounded textual reasoning.  These options are evaluated, in concert, with large-scale co-training on visual-language datasets.
+                </p>
+            </div>
+        </div>
+
+
+ <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results
+                </h3>
+		<p class="text-justify">
+        
+		We show a few example videos showing how PaLM-E can be used to plan and execute long horizon tasks on two different real embodiments. Please note, that all of these results were obtained using the same model trained on all data.
+		In the first video above the abstract, we execute a long-horizon instruction "bring me the rice chips from the drawer" that includes multiple planning steps as well as incorporating visual feedback from the robot's camera. <br><br>
+		Below, we show another example on the same robot where the instruction is "bring me a green star". Green star is an object that this robot wasn't directly exposed to.
+		</p>
+
+        <p style="test-align:center;">
+					<video id="v0" width="100%" playsinline muted loop controls>
+                       <source src="videos/meta/green_star.mp4" type="video/mp4">
+                   </video>		
+        </p>
+        <p class="text-justify">
+
+         In the next example, we show PaLM-E on another robot embodiment. In this case our model is able to successfully plan a long-horizon task "sort blocks by colors into different corners" .
+		</p>
+        <p style="test-align:center;">
+					<video id="v0" width="100%" playsinline muted loop controls>
+                       <source src="videos/xarm/sort_by_color_iphone.mp4" type="video/mp4">
+                   </video>		
+        </p>
+        
+        Here is another example of this tasks that involves planning over multiple stages and incorporating visual feedback over long time horizons.
+		</p>
+        <p style="test-align:center;">
+					<video id="v0" width="100%" playsinline muted loop controls>
+                       <source src="videos/xarm/sort_colors_into_corners_long.mp4" type="video/mp4">
+                   </video>		
+        </p>
+        
+        Below, we demonstate two more examples of long-horizon pushing tasks on this robot. The first instruction is "move remaining blocks to the group".
+		</p>
+        <p style="test-align:center;">
+					<video id="v0" width="100%" playsinline muted loop controls>
+                       <source src="videos/xarm/remaining_blocks_to_group.mp4" type="video/mp4">
+                   </video>		
+        </p>
+        
+        
+        Whereas in this video the instruction is: "push the ocean colored blocks together".
+		</p>
+        <p style="test-align:center;">
+					<video id="v0" width="100%" playsinline muted loop controls>
+                       <source src="videos/xarm/ocean_colored_blocks_together.mp4" type="video/mp4">
+                   </video>		
+        </p>
+        
+        Next, we demonstrate two examples of generalization. In the case below the instruction is "push red blocks to the coffee cup". The dataset contains only three demonstrations with the coffee cup in them, and none of them included red blocks.
+		</p>
+        <p style="test-align:center;">
+					<video id="v0" width="100%" playsinline muted loop controls>
+                       <source src="videos/xarm/red_blocks_to_coffee.mp4" type="video/mp4">
+                   </video>		
+        </p>
+        
+        Lastly, we show another generalization example, where the instruction is "push green blocks to the turtle". The robot is able to successfully execute this task even though it has never seen the turtle before.
+		</p>
+        <p style="test-align:center;">
+					<video id="v0" width="100%" playsinline muted loop controls>
+                       <source src="videos/xarm/green_blocks_to_turtle.mp4" type="video/mp4">
+                   </video>		
+        </p>
+	    </div>
+        </div>
+            
+       
+<!--
+         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation 
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{rt12022arxiv,
+    title={RT-1: Robotics Transformer for Real-World Control at Scale},
+    author={Anthony	Brohan and  Noah Brown and  Justice Carbajal and  Yevgen Chebotar and  Joseph Dabis and  Chelsea Finn and  Keerthana Gopalakrishnan and  Karol Hausman and  Alex Herzog and  Jasmine Hsu and  Julian Ibarz and  Brian Ichter and  Alex Irpan and  Tomas Jackson and  Sally Jesmonth and  Nikhil Joshi and  Ryan Julian and  Dmitry Kalashnikov and  Yuheng Kuang and  Isabel Leal and  Kuang-Huei Lee and  Sergey Levine and  Yao Lu and  Utsav Malla and  Deeksha Manjunath and  Igor Mordatch and  Ofir Nachum and  Carolina Parada and  Jodilyn Peralta and  Emily Perez and  Karl Pertsch and  Jornell Quiambao and  Kanishka Rao and  Michael Ryoo and  Grecia Salazar and  Pannag Sanketi and  Kevin Sayed and  Jaspiar Singh and  Sumedh Sontakke and  Austin Stone and  Clayton Tan and  Huong Tran and  Vincent Vanhoucke and Steve Vega and  Quan Vuong and  Fei Xia and  Ted Xiao and  Peng Xu and  Sichun Xu and  Tianhe Yu and  Brianna Zitkovich},
+    booktitle={arXiv preprint arXiv:2212.06817},
+    year={2022}
+}</textarea>
+                </div>
+            </div>
+             
+        </div>
+
+
+         <div class="row">
+            <div id="open-source" class="col-md-8 col-md-offset-2">
+                <h3>
+                    Open Source
+                </h3>
+              We open source the RT-1 model <a href="https://github.com/google-research/robotics_transformer">[here]. </a>
+              <p style="text-align:center;">
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+The authors would like to acknowledge Aleksandra Faust, Andy Christiansen, Chuyuan Fu, Daniel Kappler, David Rendleman, Eric Jang, Jessica Gomez, Jessica Lin, Jie Tan, Josh Weaver, Justin Boyd, Krzysztof Choromanski, Matthew Bennice, Mengyuan Yan, Mrinal Kalakrishnan, Nik Stewart, Paul Wohlhart, Peter Pastor, Pierre Sermanet, Wenlong Lu, Zhen Yu Song, Zhuo Xu, and the greater teams at Robotics at Google and Everyday Robots for their feedback and contributions.
+                    <br><br>
+                The website template was borrowed from <a href="http://jonbarron.info/">Jon Barron</a>.
+                </p>
+            </div>
+        </div>
+            -->
+    </div>
+</body>
+</html>
