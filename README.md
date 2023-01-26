@@ -1,1 +1,1 @@
-Website for RT-1: Robotics Transformer for Real-World Control at Scale
+Supplementary material website for PaLM-E (anonymous submission)
